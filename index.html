@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environmental Initiatives in Connecticut</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+    }
+    header {
+      background: #006400;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+      padding: 2rem 0;
+    }
+    .category {
+      margin-bottom: 2rem;
+    }
+    .category h2 {
+      color: #333;
+      border-bottom: 2px solid #006400;
+      padding-bottom: 0.5rem;
+    }
+    .initiative-list {
+      list-style: none;
+      padding: 0;
+    }
+    .initiative-list li {
+      margin: 0.5rem 0;
+      cursor: pointer;
+      color: #006400;
+    }
+    .initiative-list li:hover {
+      text-decoration: underline;
+    }
+    .description {
+      background: #fff;
+      padding: 1rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      display: none;
+    }
+    .description a {
+      color: #006400;
+      text-decoration: none;
+    }
+    .description a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Environmental Initiatives in Connecticut</h1>
+    <p>Your guide to environmental efforts in the state</p>
+  </header>
+
+  <div class="container">
+    <!-- Wildlife Conservation -->
+    <div class="category">
+      <h2>Wildlife Conservation</h2>
+      <ul class="initiative-list" id="wildlife">
+        <li data-name="Action Wildlife Foundation"
+            data-description="A nonprofit dedicated to preserving Connecticut's wildlife through habitat conservation and education programs." 
+            data-url="https://www.actionwildlifefoundation.com/">
+          Action Wildlife Foundation
+        </li>
+        <li data-name="Connecticut Audubon Society"
+            data-description="Protecting bird populations through research, conservation efforts, and community engagement." 
+            data-url="https://www.ctaudubon.org">
+          Connecticut Audubon Society
+        </li>
+        <li data-name="Beardsley Zoo Conservation Program"
+            data-description="Conserving endangered species through research, breeding programs, and wildlife education at Connecticut's only zoo." 
+            data-url="https://www.beardsleyzoo.org">
+          Beardsley Zoo Conservation Program
+        </li>
+      </ul>
+      <div class="description" id="wildlife-desc"></div>
+    </div>
+
+    <!-- Clean Energy -->
+    <div class="category">
+      <h2>Clean Energy</h2>
+      <ul class="initiative-list" id="clean-energy">
+        <li data-name="Energize Connecticut"
+            data-description="Promotes clean energy solutions and energy efficiency programs for Connecticut residents." 
+            data-url="https://www.energizect.com">
+          Energize Connecticut
+        </li>
+        <li data-name="CT Green Bank"
+            data-description="A financial institution focused on accelerating the deployment of green energy projects in Connecticut." 
+            data-url="https://www.ctgreenbank.com">
+          CT Green Bank
+        </li>
+      </ul>
+      <div class="description" id="clean-energy-desc"></div>
+    </div>
+
+    <!-- Water Preservation -->
+    <div class="category">
+      <h2>Water Preservation</h2>
+      <ul class="initiative-list" id="water">
+        <li data-name="Connecticut River Conservancy"
+            data-description="Protecting Connecticut's rivers, streams, and drinking water sources through advocacy and conservation." 
+            data-url="https://www.ctriver.org">
+          Connecticut River Conservancy
+        </li>
+        <li data-name="Save the Sound"
+            data-description="A nonprofit focused on improving the health and cleanliness of Long Island Sound." 
+            data-url="https://www.savethesound.org">
+          Save the Sound
+        </li>
+        <li data-name="Housatonic Valley Association"
+            data-description="Preserving the natural integrity of the Housatonic River through watershed conservation efforts." 
+            data-url="https://www.hvatoday.org">
+          Housatonic Valley Association
+        </li>
+        <li data-name="River Alliance of Connecticut"
+            data-description="Advocates for sustainable river management policies and conservation practices." 
+            data-url="https://www.riveralliance.org">
+          River Alliance of Connecticut
+        </li>
+      </ul>
+      <div class="description" id="water-desc"></div>
+    </div>
+
+    <!-- Recycling and Waste Management -->
+    <div class="category">
+      <h2>Recycling and Waste Management</h2>
+      <ul class="initiative-list" id="recycling">
+        <li data-name="Recycle CT"
+            data-description="Provides recycling education and support to Connecticut communities." 
+            data-url="https://www.recyclect.com/">
+          Recycle CT
+        </li>
+        <li data-name="Sierra Club Connecticut"
+            data-description="Advocates for climate action, renewable energy, wildlife protection, sustainable transportation, and zero-waste initiatives to safeguard Connecticut’s environment." 
+            data-url="https://www.connecticut.sierraclub.org/">
+          Sierra Club Connecticut
+        </li>
+        <li data-name="Green Monster e-Cycling"
+            data-description="Promotes electronics recycling in Connecticut, 'preventing toxins from making their way into our environment, as well as putting precious resources back in to use for newly manufactured products.'" 
+            data-url="https://greenmonsterecycling.com/about-us/">
+            Green Monster e-Cycling
+        </li>
+      </ul>
+      <div class="description" id="recycling-desc"></div>
+    </div>
+
+    <!-- Climate Action -->
+    <div class="category">
+      <h2>Climate Action</h2>
+      <ul class="initiative-list" id="climate">
+        <li data-name="350 Connecticut"
+            data-description="Works to promote renewable energy and end fossil fuel dependency in the state." 
+            data-url="https://350ct.org">
+          350 Connecticut
+        </li>
+        <li data-name="Climate Reality Project"
+            data-description="Focuses on education and action to combat climate change in local communities." 
+            data-url="https://www.climaterealityproject.org/blog/how-does-climate-crisis-affect-new-england">
+          Climate Reality Project
+        </li>
+      </ul>
+      <div class="description" id="climate-desc"></div>
+    </div>
+  </div>
+
+  <script>
+    // Function to handle initiative click
+    document.querySelectorAll('.initiative-list li').forEach(item => {
+      item.addEventListener('click', () => {
+        // Get the name, description, and URL of the clicked initiative
+        const name = item.getAttribute('data-name');
+        const description = item.getAttribute('data-description');
+        const url = item.getAttribute('data-url');
+
+        // Find the description container for the category
+        const descContainer = item.parentElement.nextElementSibling;
+
+        // Populate the description box with new content
+        descContainer.innerHTML = `
+          <h3>${name}</h3>
+          <p>${description}</p>
+          <a href="${url}" target="_blank">Learn More</a>
+        `;
+
+        // Make the description box visible if not already
+        descContainer.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
